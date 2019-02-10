@@ -15,14 +15,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    super
+    # スーパークラスのメソッドがサブクラスでオーバーライドされた場合に、
+    # スーパークラスのメソッドを明示的に呼び出すことが可能です。
+    # スーパークラスのメソッドを呼び出すにはオーバーライドしたメソッドの中で「super」を使って呼び出します。
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+  end
 
   # DELETE /resource
   # def destroy
@@ -51,17 +54,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  # アカウント編集後、プロフィール画面に移動する
+  def after_sign_up_path_for(resource)
+    user_path(id: current_user.id)
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-  
-  # アカウント編集後、プロフィール画面に移動する
-  def after_update_path_for(resource)
-    user_path(id: current_user.id)
-  end
+
 end
