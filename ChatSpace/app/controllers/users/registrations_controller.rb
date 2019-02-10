@@ -15,14 +15,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
-  #   render 'devise/registrations/edit'
-  # end
+  def edit
+    super
+    # スーパークラスのメソッドがサブクラスでオーバーライドされた場合に、
+    # スーパークラスのメソッドを明示的に呼び出すことが可能です。
+    # スーパークラスのメソッドを呼び出すにはオーバーライドしたメソッドの中で「super」を使って呼び出します。
+  end
 
   # PUT /resource
-  # def update
-  #
-  # end
+  def update
+    super
+  end
 
   # DELETE /resource
   # def destroy
