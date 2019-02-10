@@ -16,12 +16,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   # def edit
-  #   super
+  #   render 'devise/registrations/edit'
   # end
 
   # PUT /resource
   # def update
-  #   super
+  #
   # end
 
   # DELETE /resource
@@ -51,17 +51,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  # アカウント編集後、プロフィール画面に移動する
+  def after_sign_up_path_for(resource)
+    user_path(id: current_user.id)
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-  
-  # アカウント編集後、プロフィール画面に移動する
-  def after_update_path_for(resource)
-    user_path(id: current_user.id)
-  end
+
 end
