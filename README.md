@@ -3,7 +3,7 @@
 https://goo.gl/forms/gtO2hExxU31o2Nxo1
 
 ## Commit
-'$ git commit --allow-empty -m "make pull request"'
+`$ git commit --allow-empty -m "make pull request"`
 
 ## prefix of commit message
 - feat: A new feature
