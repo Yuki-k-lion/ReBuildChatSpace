@@ -64,3 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # install webpack for vue
 gem 'webpacker', github: 'rails/webpacker'
 gem 'devise'
+
+group :production do 
+  gem 'unicorn'
+end
