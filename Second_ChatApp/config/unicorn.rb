@@ -7,8 +7,12 @@ pid "#{app_path}/tmp/pids/unicorn.pid"
 stderr_path "#{app_path}/log/unicorn.stderr.log"
 stdout_path "#{app_path}/log/unicorn.stdout.log"
 
-listen 3000
+#listen 3000
 timeout 60
+
+#listen "/var/run/unicorn.sock"
+#pid "/var/run/unicorn.pid"
+listen "#{app_path}/tmp/sockets/unicorn.sock"
 
 preload_app true
 GC.respond_to?(:copy_on_write_friendly=) && GC.copy_on_write_friendly = true
